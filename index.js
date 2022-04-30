@@ -148,15 +148,6 @@ function countFlips(array) {
   }
   //End Functions...
 
-//Serve static HTML public directory
-app.use(express.static('./public'))
-
-//HTTP method GET at root endpoint /app/
-app.get("/app/", (req, res, next) => {
-    res.json({"message":"Your API works! (200)"});
-	res.status(200);
-});
-
   //a03 Calls 
 
   app.get('/app/flip/', (req, res) => {
