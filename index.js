@@ -6,7 +6,7 @@ const app = express()
 const args = require('minimist')(process.argv.slice(2))
 args["port", "debug", "log", "help"]
 //Require database
-const db = require('src\services\database.js')
+const db = require('./src/services/database.js')
 //Require morgan
 const morgan = require('morgan')
 //Require fs 
