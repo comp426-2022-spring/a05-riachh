@@ -13,7 +13,7 @@ const morgan = require('morgan')
 const fs = require('fs')
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true}));
+//app.use(express.urlencoded({ extended: true}));
 
 //Store help text 
 const help = (`
@@ -36,7 +36,7 @@ if (args.help || args.h) {
 }
 
 //Initialize  
-const HTTP_PORT = args.port || process.env.PORT || 5555
+const HTTP_PORT = args.port || args.p || process.env.PORT || 5555
 //Start Listening 
 const server = app.listen(HTTP_PORT, () => {
     console.log('App listening on port %PORT%'.replace('%PORT%',HTTP_PORT))
@@ -70,6 +70,9 @@ app.use( (req, res, next) => {
   const info = stmt.run(logdata.remoteaddr, logdata.remoteuser, logdata.date, logdata.method, logdata.url, logdata.protocol, logdata.httpversion, logdata.status, logdata.referer, logdata.useragent)
   next()
 });
+
+//Serve static HTML public directory
+app.use(express.static('./public'))
 
 app.get('/app/', (req, res) => {
   res.statusCode = 200; 
