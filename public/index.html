@@ -27,23 +27,76 @@
   </head>
   <body>
     <nav>
-      <button id="homenav">Home</button>
-      <button id="singlenav">Flip one coin</button>
-      <button id="multinav">Flip multiple coins</button>
-      <button id="guessnav">Guess the result</button>
+      <button id="homenav" onclick = "home()" class="active">Home</button>
+      <button id="singlenav" onclick = "single()">Flip one coin</button>
+      <button id="multinav" onclick = "multiple()">Flip multiple coins</button>
+      <button id="guessnav" onclick = "guess()">Guess the result</button>
     </nav>
-    <div id="home">
-      
+    
+    <div class = container>
+    
+    <div id = "home" class = "active">
+      <h1>Welcome! Click the buttons to flip a single coin, flip many coins, or to guess a coin flip.</h1>
     </div>    
-    <div id="single" class="hidden">
-      
+
+    <div id = "single" class = "inactive">
+      <h1>Flip a single coin</h1>
+        <button id = "coin">Flip a coin!</button>
+        <h2>Results</h2>
+        <p><span id = "results"></span></p>
+
+        <img src="assets/img/coin.png" id="quarter" class="bigcoin">
     </div>
-    <div id="multi" class="hidden">
-      
+
+    <div id="multiple" class = "inactive">
+      <h1>Flip multiple coins</h1>
+        <form id = "coins">
+          <label fo r= "number">
+            <strong>How many coins?</strong>
+          </label>
+          <input type= "number" name = "number" id = "number">
+          <input type= "submit" value = "Flip multiple coins!">
+        </form>
+
+        <h2>Results</h2>
+        <p id = "heads"></p>
+			  <p id = "tails"></p>
+
+        <ul id="coinlist">
+          <li>
+            <img src="assets/img/coin.png" class="bigcoin"> 
+          </li>
+        </ul>
     </div>
-    <div id="guess" class="hidden">
+
+    <div id="guess" class = "inactive">
+      <h1>Guess a coin flip</h1>
+      <form id = "call">
+        <label for = "side">Make your guess:</label>
+
+        <select name = "guess" id = "guess" form = "call">
+          <option value = "heads">Heads</option>
+          <option value = "tails">Tails</option>
+        </select>
+
+        <input type = "submit" value = "Flip the coin!">
+      </form>
+
+      <h2>Results</h2>
+
+      <p><span id="choice"><span></p>
+      <p><span id = "actual"><span></p>
+      <p><span id = "results"><span></p>
       
+      <ul id="coingame">
+        <li>
+			    <img src="assets/img/coin.png" class="bigcoin"> 
+        </li>
+      </ul>
     </div>
+
+    </div>
+
 	<script src="main.js"></script>
   </body>
 </html>

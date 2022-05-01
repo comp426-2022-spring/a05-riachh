@@ -47,6 +47,7 @@ async function flipMult(event) {
   
         document.getElementById("heads").innerHTML = "Heads: " + results.summary.heads;
         document.getElementById("tails").innerHTML = "Tails: " + results.summary.tails;
+        //Function below 
         document.getElementById("coinlist").innerHTML = coinList(results.raw);
 
       } catch (error) {
@@ -134,4 +135,15 @@ function guess () {
     document.getElementById("single").className =  "inactive"; 
     document.getElementById("multiple").className =  "inactive"; 
     document.getElementById("guess").className =  "active"; 
+}
+
+
+//coinList loop to output results 
+function coinList(array) {
+    let text = "";
+    let arrayLength = array.length
+    for (let i = 0; i < arrayLength; i++) {
+      text += '<li><img src="assets/img/' + array[i] + '.png" class="bigcoin"></li>';
+    }
+    return text
 }

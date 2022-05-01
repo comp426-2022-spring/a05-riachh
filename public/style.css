@@ -25,3 +25,8 @@ img.smallcoin {
 img#callcoin {
   opacity: 0.5;
 }
+
+/*In line */
+ul li{
+  display: inline;
+}
