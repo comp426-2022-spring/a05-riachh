@@ -1,15 +1,32 @@
+/*Not sure if I actually need this lol */
 div.hidden {
   display: none;
 }
 
+/*Active vs inactive */
+button.active {
+  background: blue;
+  color: gainsboro;
+}
 div.active {
-  border: 5px solid red;
+  border: 5px solid blueviolet;
+}
+div.inactive {
+  display: none;
 }
 
+/*Coin images */
 img.bigcoin {
   width: 50px;
 }
-
 img.smallcoin {
   width: 50px;
+}
+img#callcoin {
+  opacity: 0.5;
+}
+
+/*In line */
+ul li{
+  display: inline;
 }
